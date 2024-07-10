@@ -1,0 +1,544 @@
+{
+  "conversations": [
+    {
+      "id": 1,
+      "question": "What is your age group?",
+      "options": [
+        { "answer": "Under 18", "next": 2 },
+        { "answer": "18-35", "next": 3 },
+        { "answer": "36-50", "next": 4 },
+        { "answer": "Above 50", "next": 5 }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Do you have any chronic conditions?",
+      "options": [
+        { "answer": "Yes", "next": 6 },
+        { "answer": "No", "next": 7 }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Do you exercise regularly?",
+      "options": [
+        { "answer": "Yes", "next": 7 },
+        { "answer": "No", "next": 8 }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Do you have any dietary restrictions?",
+      "options": [
+        { "answer": "Yes", "next": 9 },
+        { "answer": "No", "next": 10 }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Do you smoke?",
+      "options": [
+        { "answer": "Yes", "next": 11 },
+        { "answer": "No", "next": 12 }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Do you take medication regularly?",
+      "options": [
+        { "answer": "Yes", "next": 13 },
+        { "answer": "No", "next": 14 }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "How many hours do you sleep on average?",
+      "options": [
+        { "answer": "Less than 5 hours", "next": 15 },
+        { "answer": "5-7 hours", "next": 16 },
+        { "answer": "More than 7 hours", "next": 17 }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "How often do you eat fast food?",
+      "options": [
+        { "answer": "Often", "next": 18 },
+        { "answer": "Sometimes", "next": 19 },
+        { "answer": "Rarely", "next": 20 }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Are you vegetarian?",
+      "options": [
+        { "answer": "Yes", "next": 21 },
+        { "answer": "No", "next": 22 }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Do you drink alcohol?",
+      "options": [
+        { "answer": "Yes", "next": 23 },
+        { "answer": "No", "next": 24 }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "How many cigarettes do you smoke per day?",
+      "options": [
+        { "answer": "Less than 10", "next": 25 },
+        { "answer": "10-20", "next": 26 },
+        { "answer": "More than 20", "next": 27 }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "Do you use any nicotine products?",
+      "options": [
+        { "answer": "Yes", "next": 28 },
+        { "answer": "No", "next": 29 }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "What type of medication do you take?",
+      "options": [
+        { "answer": "Prescription", "next": 30 },
+        { "answer": "Over-the-counter", "next": 31 }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "Do you use any supplements?",
+      "options": [
+        { "answer": "Yes", "next": 32 },
+        { "answer": "No", "next": 33 }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "Do you feel well-rested after sleep?",
+      "options": [
+        { "answer": "Yes", "next": 34 },
+        { "answer": "No", "next": 35 }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "Do you wake up frequently during the night?",
+      "options": [
+        { "answer": "Yes", "next": 36 },
+        { "answer": "No", "next": 37 }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "Do you nap during the day?",
+      "options": [
+        { "answer": "Yes", "next": 38 },
+        { "answer": "No", "next": 39 }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "Do you consider fast food unhealthy?",
+      "options": [
+        { "answer": "Yes", "next": 40 },
+        { "answer": "No", "next": 41 }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "Do you cook at home?",
+      "options": [
+        { "answer": "Yes", "next": 42 },
+        { "answer": "No", "next": 43 }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "Do you like to try new foods?",
+      "options": [
+        { "answer": "Yes", "next": 44 },
+        { "answer": "No", "next": 45 }
+      ]
+    },
+    {
+      "id": 21,
+      "question": "Do you eat dairy products?",
+      "options": [
+        { "answer": "Yes", "next": 46 },
+        { "answer": "No", "next": 47 }
+      ]
+    },
+    {
+      "id": 22,
+      "question": "Do you eat meat daily?",
+      "options": [
+        { "answer": "Yes", "next": 48 },
+        { "answer": "No", "next": 49 }
+      ]
+    },
+    {
+      "id": 23,
+      "question": "How often do you drink alcohol?",
+      "options": [
+        { "answer": "Daily", "next": 50 },
+        { "answer": "Weekly", "next": 51 },
+        { "answer": "Rarely", "next": 52 }
+      ]
+    },
+    {
+      "id": 24,
+      "question": "Do you avoid alcohol in social gatherings?",
+      "options": [
+        { "answer": "Yes", "next": 53 },
+        { "answer": "No", "next": 54 }
+      ]
+    },
+    {
+      "id": 25,
+      "question": "Do you plan to quit smoking?",
+      "options": [
+        { "answer": "Yes", "next": 55 },
+        { "answer": "No", "next": 56 }
+      ]
+    },
+    {
+      "id": 26,
+      "question": "Have you tried to quit smoking before?",
+      "options": [
+        { "answer": "Yes", "next": 57 },
+        { "answer": "No", "next": 58 }
+      ]
+    },
+    {
+      "id": 27,
+      "question": "Are you aware of the health risks of smoking?",
+      "options": [
+        { "answer": "Yes", "next": 59 },
+        { "answer": "No", "next": 60 }
+      ]
+    },
+    {
+      "id": 28,
+      "question": "What nicotine products do you use?",
+      "options": [
+        { "answer": "E-cigarettes", "next": 61 },
+        { "answer": "Nicotine patches", "next": 62 },
+        { "answer": "Other", "next": 63 }
+      ]
+    },
+    {
+      "id": 29,
+      "question": "Do you plan to use nicotine products?",
+      "options": [
+        { "answer": "Yes", "next": 64 },
+        { "answer": "No", "next": 65 }
+      ]
+    },
+    {
+      "id": 30,
+      "question": "Do you take prescription medication regularly?",
+      "options": [
+        { "answer": "Yes", "next": 66 },
+        { "answer": "No", "next": 67 }
+      ]
+    },
+    {
+      "id": 31,
+      "question": "Do you prefer over-the-counter medication?",
+      "options": [
+        { "answer": "Yes", "next": 68 },
+        { "answer": "No", "next": 69 }
+      ]
+    },
+    {
+      "id": 32,
+      "question": "What supplements do you take?",
+      "options": [
+        { "answer": "Vitamins", "next": 70 },
+        { "answer": "Minerals", "next": 71 },
+        { "answer": "Herbal", "next": 72 }
+      ]
+    },
+    {
+      "id": 33,
+      "question": "Do you consider taking supplements?",
+      "options": [
+        { "answer": "Yes", "next": 73 },
+        { "answer": "No", "next": 74 }
+      ]
+    },
+    {
+      "id": 34,
+      "question": "Do you sleep uninterrupted?",
+      "options": [
+        { "answer": "Yes", "next": 75 },
+        { "answer": "No", "next": 76 }
+      ]
+    },
+    {
+      "id": 35,
+      "question": "Do you use sleep aids?",
+      "options": [
+        { "answer": "Yes", "next": 77 },
+        { "answer": "No", "next": 78 }
+      ]
+    },
+    {
+      "id": 36,
+      "question": "Do you wake up at the same time daily?",
+      "options": [
+        { "answer": "Yes", "next": 79 },
+        { "answer": "No", "next": 80 }
+      ]
+    },
+    {
+      "id": 37,
+      "question": "Do you feel energetic after sleep?",
+      "options": [
+        { "answer": "Yes", "next": 81 },
+        { "answer": "No", "next": 82 }
+      ]
+    },
+    {
+      "id": 38,
+      "question": "How long do you nap?",
+      "options": [
+        { "answer": "Less than 30 minutes", "next": 83 },
+        { "answer": "30-60 minutes", "next": 84 },
+        { "answer": "More than 60 minutes", "next": 85 }
+      ]
+    },
+    {
+      "id": 39,
+      "question": "Do you nap daily?",
+      "options": [
+        { "answer": "Yes", "next": 86 },
+        { "answer": "No", "next": 87 }
+      ]
+    },
+    {
+      "id": 40,
+      "question": "Do you plan to reduce fast food consumption?",
+      "options": [
+        { "answer": "Yes", "next": 88 },
+        { "answer": "No", "next": 89 }
+      ]
+    },
+    {
+      "id": 41,
+      "question": "Do you think fast food is convenient?",
+      "options": [
+        { "answer": "Yes", "next": 90 },
+        { "answer": "No", "next": 91 }
+      ]
+    },
+    {
+      "id": 42,
+      "question": "How often do you cook at home?",
+      "options": [
+        { "answer": "Daily", "next": 92 },
+        { "answer": "Weekly", "next": 93 },
+        { "answer": "Rarely", "next": 94 }
+      ]
+    },
+    {
+      "id": 43,
+      "question": "Do you know how to cook?",
+      "options": [
+        { "answer": "Yes", "next": 95 },
+        { "answer": "No", "next": 96 }
+      ]
+    },
+    {
+      "id": 44,
+      "question": "Do you enjoy cooking?",
+      "options": [
+        { "answer": "Yes", "next": 97 },
+        { "answer": "No", "next": 98 }
+      ]
+    },
+    {
+      "id": 45,
+      "question": "Do you prefer familiar foods?",
+      "options": [
+        { "answer": "Yes", "next": 99 },
+        { "answer": "No", "next": 100 }
+      ]
+    },
+    {
+      "id": 46,
+      "question": "Do you consume dairy daily?",
+      "options": [
+        { "answer": "Yes", "next": 101 },
+        { "answer": "No", "next": 102 }
+      ]
+    },
+    {
+      "id": 47,
+      "question": "Are you lactose intolerant?",
+      "options": [
+        { "answer": "Yes", "next": 103 },
+        { "answer": "No", "next": 104 }
+      ]
+    },
+    {
+      "id": 48,
+      "question": "Do you prefer red meat?",
+      "options": [
+        { "answer": "Yes", "next": 105 },
+        { "answer": "No", "next": 106 }
+      ]
+    },
+    {
+      "id": 49,
+      "question": "Do you eat fish?",
+      "options": [
+        { "answer": "Yes", "next": 107 },
+        { "answer": "No", "next": 108 }
+      ]
+    },
+    {
+      "id": 50,
+      "question": "Do you plan to reduce alcohol consumption?",
+      "options": [
+        { "answer": "Yes", "next": 109 },
+        { "answer": "No", "next": 110 }
+      ]
+    },
+    {
+      "id": 51,
+      "question": "Do you enjoy drinking socially?",
+      "options": [
+        { "answer": "Yes", "next": 111 },
+        { "answer": "No", "next": 112 }
+      ]
+    },
+    {
+      "id": 52,
+      "question": "Do you drink on special occasions?",
+      "options": [
+        { "answer": "Yes", "next": 113 },
+        { "answer": "No", "next": 114 }
+      ]
+    },
+    {
+      "id": 53,
+      "question": "Do you feel pressure to drink?",
+      "options": [
+        { "answer": "Yes", "next": 115 },
+        { "answer": "No", "next": 116 }
+      ]
+    },
+    {
+      "id": 54,
+      "question": "Do you think avoiding alcohol is beneficial?",
+      "options": [
+        { "answer": "Yes", "next": 117 },
+        { "answer": "No", "next": 118 }
+      ]
+    },
+    {
+      "id": 55,
+      "question": "Have you tried to quit smoking before?",
+      "options": [
+        { "answer": "Yes", "next": 119 },
+        { "answer": "No", "next": 120 }
+      ]
+    },
+    {
+      "id": 56,
+      "question": "Do you know the risks of smoking?",
+      "options": [
+        { "answer": "Yes", "next": 121 },
+        { "answer": "No", "next": 122 }
+      ]
+    },
+    {
+      "id": 57,
+      "question": "What methods have you tried to quit?",
+      "options": [
+        { "answer": "Cold turkey", "next": 123 },
+        { "answer": "Nicotine replacement", "next": 124 },
+        { "answer": "Medication", "next": 125 }
+      ]
+    },
+    {
+      "id": 58,
+      "question": "Would you like to quit smoking?",
+      "options": [
+        { "answer": "Yes", "next": 126 },
+        { "answer": "No", "next": 127 }
+      ]
+    },
+    {
+      "id": 59,
+      "question": "Do you want more information on the risks?",
+      "options": [
+        { "answer": "Yes", "next": 128 },
+        { "answer": "No", "next": 129 }
+      ]
+    },
+    {
+      "id": 60,
+      "question": "Do you feel smoking helps you relax?",
+      "options": [
+        { "answer": "Yes", "next": 130 },
+        { "answer": "No", "next": 131 }
+      ]
+    },
+    {
+      "id": 61,
+      "question": "Do you prefer e-cigarettes?",
+      "options": [
+        { "answer": "Yes", "next": 132 },
+        { "answer": "No", "next": 133 }
+      ]
+    },
+    {
+      "id": 62,
+      "question": "Do nicotine patches help?",
+      "options": [
+        { "answer": "Yes", "next": 134 },
+        { "answer": "No", "next": 135 }
+      ]
+    },
+    {
+      "id": 63,
+      "question": "What other products do you use?",
+      "options": [
+        { "answer": "Nicotine gum", "next": 136 },
+        { "answer": "Inhalers", "next": 137 },
+        { "answer": "Lozenges", "next": 138 }
+      ]
+    },
+    {
+      "id": 64,
+      "question": "Do you find nicotine helpful?",
+      "options": [
+        { "answer": "Yes", "next": 139 },
+        { "answer": "No", "next": 140 }
+      ]
+    },
+    {
+      "id": 65,
+      "question": "Do you think nicotine is harmful?",
+      "options": [
+        { "answer": "Yes", "next": 141 },
+        { "answer": "No", "next": 142 }
+      ]
+    },
+    {
+      "id": 66,
+      "question": "Do you have any side effects from medication?",
+      "options": [
+        { "answer": "Yes", "next": 143 },
+        { "answer": "No", "next": 144 }
+      ]
+    }
+  ]
+}

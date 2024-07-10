@@ -2,6 +2,7 @@
 import uvicorn
 from fastapi import FastAPI, Request
 from pydantic import BaseModel
+# uvicorn main:app --reload --host 0.0.0.0 --port 8000
 
 # Langchain setup
 import os 

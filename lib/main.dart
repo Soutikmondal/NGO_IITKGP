@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:patient_app/Chat_Bot/providers/chats_provider.dart';
+import 'package:patient_app/chatbotv2/providers/chat_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => ChatProvider()),
+        ChangeNotifierProvider(create: (_) => ChatProviderv2()),
       ],
       child: MaterialApp(
         title: 'User Management',

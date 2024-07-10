@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:patient_app/Chat_Bot/screens/chat_screen.dart';
+import 'package:patient_app/Rag/chatscreen/chatscreen.dart';
+import 'package:patient_app/chatbotv2/screen/chat_screen.dart';
+
 import 'create_user_screen.dart';
 import 'main.dart';
-// Import ChatScreen
 
 class HomeScreen extends StatelessWidget {
   final String userType;
@@ -35,10 +37,10 @@ class HomeScreen extends StatelessWidget {
               leading: const Icon(Icons.home),
               title: const Text('Home'),
               onTap: () {
-                Navigator.pop(context); // Close the drawer
+                Navigator.pop(context);
               },
             ),
-            if (userType == 'adm') // Show this option only for admins
+            if (userType == 'adm')
               ListTile(
                 leading: const Icon(Icons.person_add),
                 title: const Text('Create Users'),
@@ -65,16 +67,46 @@ class HomeScreen extends StatelessWidget {
       body: const Center(
         child: Text('Welcome to the Home Page!'),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => ChatScreen(userType: userType)),
-          );
-        },
-        backgroundColor: Colors.blue,
-        child: const Icon(Icons.chat),
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: <Widget>[
+          FloatingActionButton(
+            heroTag: 'chat1',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ChatScreenrag()),
+              );
+            },
+            backgroundColor: Colors.blue,
+            child: const Icon(Icons.chat),
+          ),
+          const SizedBox(height: 10),
+          FloatingActionButton(
+            heroTag: 'chat2',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ChatScreenv2()),
+              );
+            },
+            backgroundColor: Colors.blue,
+            child: const Icon(Icons.chat),
+          ),
+          const SizedBox(height: 10),
+          FloatingActionButton(
+            heroTag: 'chat3',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => ChatScreen(userType: userType)),
+              );
+            },
+            backgroundColor: Colors.blue,
+            child: const Icon(Icons.chat),
+          ),
+        ],
       ),
     );
   }
