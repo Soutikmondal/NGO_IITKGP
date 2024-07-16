@@ -7,7 +7,9 @@ import 'package:patient_app/chatbotv2/providers/chat_provider.dart';
 import 'package:provider/provider.dart';
 
 class ChatScreenv2 extends StatefulWidget {
-  const ChatScreenv2({super.key});
+  final String userid;
+
+  const ChatScreenv2({Key? key, required this.userid}) : super(key: key);
 
   @override
   State<ChatScreenv2> createState() => _ChatScreenState();
@@ -17,11 +19,12 @@ class _ChatScreenState extends State<ChatScreenv2> {
   List<dynamic> _conversations = [];
   int _currentId = 1;
   List<String> _userResponses = [];
-  String userId = "user123";
+  late final String userId;
 
   @override
   void initState() {
     super.initState();
+    userId = widget.userid;
     _loadConversation();
   }
 
@@ -104,12 +107,12 @@ class _ChatScreenState extends State<ChatScreenv2> {
             onPressed: _saveConversation,
           ),
         ],
+        backgroundColor: Colors.blueAccent,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Consumer<ChatProviderv2>(
           builder: (context, chatProvider, child) {
-            // Ensure the current conversation is retrieved from _conversations
             final currentConversation = _conversations.firstWhere(
               (conv) => conv['id'] == _currentId,
               orElse: () => null,
@@ -132,7 +135,7 @@ class _ChatScreenState extends State<ChatScreenv2> {
                           style: TextStyle(
                             color: chat.chatIndex == 0
                                 ? Colors.blue
-                                : Colors.green,
+                                : Colors.black,
                           ),
                         ),
                       );

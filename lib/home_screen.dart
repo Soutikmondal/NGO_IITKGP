@@ -8,14 +8,18 @@ import 'main.dart';
 
 class HomeScreen extends StatelessWidget {
   final String userType;
-
-  const HomeScreen({super.key, required this.userType});
+  final String? userid;
+  const HomeScreen({super.key, required this.userType, this.userid});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        title: const Text(
+          'Home',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Colors.blueAccent,
       ),
       drawer: Drawer(
         child: ListView(
@@ -81,18 +85,25 @@ class HomeScreen extends StatelessWidget {
             backgroundColor: Colors.blue,
             child: const Icon(Icons.chat),
           ),
+          SizedBox(
+              height: 8), // Add some space between the button and the label
+          Text('RAG'),
           const SizedBox(height: 10),
           FloatingActionButton(
             heroTag: 'chat2',
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const ChatScreenv2()),
+                MaterialPageRoute(
+                    builder: (context) => ChatScreenv2(userid: userid!)),
               );
             },
             backgroundColor: Colors.blue,
             child: const Icon(Icons.chat),
           ),
+          SizedBox(
+              height: 8), // Add some space between the button and the label
+          Text('Robot'),
           const SizedBox(height: 10),
           FloatingActionButton(
             heroTag: 'chat3',
@@ -106,6 +117,9 @@ class HomeScreen extends StatelessWidget {
             backgroundColor: Colors.blue,
             child: const Icon(Icons.chat),
           ),
+          SizedBox(
+              height: 8), // Add some space between the button and the label
+          Text('Gemini'),
         ],
       ),
     );

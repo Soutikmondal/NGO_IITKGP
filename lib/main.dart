@@ -42,6 +42,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final _loginIdController = TextEditingController();
   final _pwdController = TextEditingController();
+  late final String user_id;
   String _loginErrorMessage = '';
 
   void _login() async {
@@ -56,12 +57,13 @@ class _LoginScreenState extends State<LoginScreen> {
     final data = json.decode(response.body);
 
     if (data['status'] == 'success') {
+      user_id = data['userid'];
+
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => HomeScreen(
-            userType: data['user_type'],
-          ),
+          builder: (context) =>
+              HomeScreen(userType: data['user_type'], userid: user_id),
         ),
       );
     } else {
@@ -73,31 +75,89 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Login'),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+      },
+      child: Scaffold(
+        body: Stack(
           children: [
-            TextField(
-              controller: _loginIdController,
-              decoration: const InputDecoration(labelText: 'Login ID'),
-            ),
-            TextField(
-              controller: _pwdController,
-              decoration: const InputDecoration(labelText: 'Password'),
-              obscureText: true,
-            ),
-            if (_loginErrorMessage.isNotEmpty)
-              Text(
-                _loginErrorMessage,
-                style: const TextStyle(color: Colors.red),
+            Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/login_background.jpg'),
+                  fit: BoxFit.cover,
+                ),
               ),
-            ElevatedButton(
-              onPressed: _login,
-              child: const Text('Login'),
+            ),
+            Container(
+              color: Colors.black.withOpacity(0.6),
+              child: Center(
+                child: SingleChildScrollView(
+                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      const Text(
+                        'Login',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 32.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                      const SizedBox(height: 16.0),
+                      TextField(
+                        controller: _loginIdController,
+                        decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Colors.white,
+                          labelText: 'Login ID',
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 16.0),
+                      TextField(
+                        controller: _pwdController,
+                        decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Colors.white,
+                          labelText: 'Password',
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                        ),
+                        obscureText: true,
+                      ),
+                      const SizedBox(height: 16.0),
+                      if (_loginErrorMessage.isNotEmpty)
+                        Text(
+                          _loginErrorMessage,
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(color: Colors.red),
+                        ),
+                      const SizedBox(height: 16.0),
+                      ElevatedButton(
+                        onPressed: _login,
+                        style: ElevatedButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(vertical: 16.0),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                        ),
+                        child: const Text(
+                          'Login',
+                          style: TextStyle(fontSize: 18.0),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ),
           ],
         ),

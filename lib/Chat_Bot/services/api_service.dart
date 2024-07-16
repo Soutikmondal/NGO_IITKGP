@@ -28,20 +28,16 @@ class ApiService {
         }),
       );
 
-      // Decode the JSON response
       Map<String, dynamic> jsonResponse =
           json.decode(utf8.decode(response.bodyBytes));
 
-      // Check for errors in the response
       if (jsonResponse['error'] != null) {
         throw HttpException(jsonResponse['error']['message']);
       }
 
-      // Extract the content from the response
       String content =
           jsonResponse['candidates'][0]['content']['parts'][0]['text'];
 
-      // Create a chat response based on the content
       List<ChatModel> chatList = [
         ChatModel(msg: content, chatIndex: 1),
       ];

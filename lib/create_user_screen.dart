@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:flutter/services.dart';
 
 class CreateUserScreen extends StatefulWidget {
   @override
@@ -18,6 +19,7 @@ class _CreateUserScreenState extends State<CreateUserScreen> {
   final _emailController = TextEditingController();
   final _designationController = TextEditingController();
   final _qualificationController = TextEditingController();
+  String? _selectedSex;
   String _userType = 'adm';
   String _loginIdStatusMessage = '';
   Color _loginIdStatusColor = Colors.black;
@@ -26,8 +28,7 @@ class _CreateUserScreenState extends State<CreateUserScreen> {
     if (_formKey.currentState!.validate()) {
       try {
         final response = await http.post(
-          Uri.parse(
-              'http://10.0.2.2/API/create_user.php'), 
+          Uri.parse('http://10.0.2.2/API/create_user.php'),
           body: {
             'loginid': _loginIdController.text,
             'pwd': _pwdController.text,
@@ -42,7 +43,7 @@ class _CreateUserScreenState extends State<CreateUserScreen> {
           },
         );
 
-      //  print('Response body: ${response.body}'); // Log the response body
+        //  print('Response body: ${response.body}');
 
         final data = json.decode(response.body);
 
@@ -167,14 +168,36 @@ class _CreateUserScreenState extends State<CreateUserScreen> {
                 decoration: InputDecoration(labelText: 'Age'),
                 keyboardType: TextInputType.number,
               ),
-              TextFormField(
-                controller: _sexController,
-                decoration: InputDecoration(labelText: 'Sex'),
+              DropdownButtonFormField<String>(
+                decoration: InputDecoration(labelText: 'Sex *'),
+                value: _selectedSex,
+                items: <String>['Male', 'Female', 'Other'].map((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+                onChanged: (newValue) {
+                  setState(() {
+                    _selectedSex = newValue;
+                    _sexController.text = newValue!;
+                  });
+                },
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please select a sex';
+                  }
+                  return null;
+                },
               ),
               TextFormField(
                 controller: _phoneController,
                 decoration: InputDecoration(labelText: 'Phone *'),
                 keyboardType: TextInputType.phone,
+                inputFormatters: [
+                  FilteringTextInputFormatter.digitsOnly,
+                  LengthLimitingTextInputFormatter(10),
+                ],
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter a phone number';
@@ -184,8 +207,19 @@ class _CreateUserScreenState extends State<CreateUserScreen> {
               ),
               TextFormField(
                 controller: _emailController,
-                decoration: InputDecoration(labelText: 'Email'),
+                decoration: InputDecoration(labelText: 'Email *'),
                 keyboardType: TextInputType.emailAddress,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter an email address';
+                  }
+                  String pattern = r'^[^@]+@[^@]+\.[^@]+';
+                  RegExp regex = RegExp(pattern);
+                  if (!regex.hasMatch(value)) {
+                    return 'Please enter a valid email address';
+                  }
+                  return null;
+                },
               ),
               TextFormField(
                 controller: _designationController,
